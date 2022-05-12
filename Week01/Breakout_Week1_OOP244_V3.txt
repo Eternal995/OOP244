@@ -1,0 +1,22 @@
+OOP244 Breakout Rooms (Week 1)
+
+Note: You should do it on your own first. You may use chat/share screen to discuss and show your code.
+1. Introduce yourself.
+2. Solve the following problem.
+a) Use your last name to label a namespace.
+b) Declare AND implement a function within the namespace. The name of the function is show( ). 
+   The function takes a character as a parameter. It displays 
+   i) a message: "WELCOME TO OOP244!!!", 
+   ii) the character received 12 times. 
+   It returns the integer value 12 to the caller.
+c) Implement a main program (i.e. a client program) in C++ to produce the following expected output (4 lines).
+
+WELCOME TO OOP244!!!
+############
+12
+SEE YOU!
+
+d) Compile and run your code i) in Visual Studio and ii) on the matrix server.
+
+3. Tell everyone when you are done (in Visual Studio or on matrix)! 
+4. When you're done, you can offer your help to other classmates.
