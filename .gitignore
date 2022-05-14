@@ -9,6 +9,14 @@ ipch/
 x64/
 .vs/
 
+#tempfiles
+~$_*.*
+
+#codelite
+.clang/
+.codelite/
+Debug/
+
 # Prerequisites
 *.d
 
