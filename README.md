@@ -1,2 +1,5 @@
 # oop244
-workshops and projects for OOP244 course at Seneca College for the semester of Summer 2022
+- Yongda Long
+- Student No: 172800211
+- Email ID: ylong9@myseneca.ca
+- OOP244NGG
