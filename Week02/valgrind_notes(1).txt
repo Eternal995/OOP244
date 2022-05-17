@@ -1,0 +1,25 @@
+
+Valgrind: A Debugging Tool on the Linux Platform
+
+Source Code: sample3_errors.cpp, sample4_errors.cpp
+
+1. Error Message (Valgrind): Memory Leaks
+
+g++ -std=c++11 -o demo3 -g sample3_errors.cpp
+
+valgrind demo3
+
+valgrind --leak-check=full demo3
+
+[the line number in the source code is shown by valgrind]
+
+2. Error Message (Valgrind): Conditional jump or move depends on uninitialized value(s)
+
+g++ -std=c++11 -o demo4 -g sample4_errors.cpp
+
+valgrind demo4
+
+
+
+
+
