@@ -114,7 +114,7 @@ namespace quizzer {
                 total++;
             }
 
-            cout << "QUIZ RESULTS: your score is " << score << "/" << total << "." << endl;
+            cout << "\nQUIZ RESULTS: your score is " << score << "/" << total << "." << endl;
         }
     }
 }
