@@ -93,7 +93,7 @@ namespace quizzer {
             DisplayAnswerBody(question[CurrentQuestion].answers[i].AnswerBody);
         }
 
-        cout << "Your Answer? ";
+        cout << "Your answer? ";
 
         cin >> question[CurrentQuestion].UserAnswer;
 
