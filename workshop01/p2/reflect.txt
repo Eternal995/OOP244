@@ -1,0 +1,30 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : May 22, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is consist of review of ipc144 file operations and the using of namespace.
+In both part of the workshop we are suppose to declare variables and functions inside the 
+namespace (sdds for part 1 and quizzer for part 2), by doing so it makes the functions in 
+namespace easy to reuse for further projects, without causing naming conflicts. 
+
+For part 2 of this workshop, I spent most the time trying to figure out how to properly read
+from the txt files. in the beginning I try to everything separated, then I run into the trouble
+when reading the answer bodies, when I tried to read if there's a space or X in between the parentheses
+, I used fscanf(file, "[%1s], ...) to try to read if it is a space or X, but it turns out cannot read
+any spaces, to after trying different ways, I can only do fscanf(file, "%[^\n]\n", ...) to read the entire
+line and then read the character that respond to the space or X to determine if the answer is correct.
+
+other than that, I think it is a straight forward workshop, I first think I will need to create a 
+Question structure inside the main function and pass it into any functions for modification, but 
+turns out I can just declare it in global scope and just use and reuse it. After successfully reading
+everything from txt files, I just finished the provided function prototypes, and compile and see the
+results to make some small fixes. 

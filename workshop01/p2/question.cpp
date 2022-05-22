@@ -13,7 +13,6 @@ my professor provided to complete my workshops and assignments.
 
 #define _CRT_SECURE_NO_WARNINGS
 #include "question.h"
-#include <cstdio>
 #include <iostream>
 
 using namespace std;
@@ -22,8 +21,7 @@ using namespace quizzer;
 namespace quizzer {
     void ReadQuestion(FILE *file, Question *question) {
 
-        char temp = fgetc(file);
-
+        char temp = fgetc(file); // this part make sure code work for first question in the quiz
         if (temp != '{')
             ungetc(temp, file);
 
@@ -51,13 +49,17 @@ namespace quizzer {
                 count++;
         }
 
+        cout << "Question " << question->QuestionNumber;
+
         if ((question->QuestionType[1] == 'a' && count >= 1) || (question->QuestionType[1] == 'c' && count == 1)) {
-            cout << "Question " << question->QuestionNumber << " -> OK" << endl;
+            // cout << "Question " << question->QuestionNumber << " -> OK" << endl;
+            cout << " -> OK" << endl;
             return 0;
         }
 
         else {
-            cout << "Question " << question->QuestionNumber << " -> ERROR" << endl;
+            // cout << "Question " << question->QuestionNumber << " -> ERROR" << endl;
+            cout << " -> ERROR" << endl;
             return 1;
         }
     }

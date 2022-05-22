@@ -14,7 +14,6 @@ my professor provided to complete my workshops and assignments.
 #define _CRT_SECURE_NO_WARNINGS
 #include "quiz.h"
 #include "question.h"
-#include <cstdio>
 #include <iostream>
 
 using namespace std;
@@ -71,14 +70,14 @@ namespace quizzer {
         }
 
         if (count == 0)
-            return 1;
+            return 1; // return 1 if all questions are valid in the quiz
         else
-            return 0;
+            return 0; // return 0 if there is a question not valid
     }
 
     int HasMoreQuestions() {
         if (question[CurrentQuestion].QuestionNumber != 0)
-            return 1;
+            return 1; // return 1 if next question is not empty, otherwise return 0
 
         else
             return 0;
@@ -102,7 +101,7 @@ namespace quizzer {
 
     void ShowQuizResults() {
 
-        if (question[CurrentQuestion].QuestionNumber == 0) {
+        if (question[CurrentQuestion].QuestionNumber == 0) { // will only run is all questions are processed/answered
             int score = 0;
             int total = 0;
 
