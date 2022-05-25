@@ -1,0 +1,30 @@
+A Checklist on Encapsulation
+
+[class vs objects]
+1. What is a C++ class? 
+	- a data type
+
+2. What is a C++ object?
+	- a variable whose data type is a clss
+
+3. What is the difference between a C++ class and a C++ object?
+
+[the structure of a C++ class]
+4. Why are data members declared as private?
+	- a client program cannot access private data members
+5. What is a member function?
+	- a function that reads or modifies the state of an object
+
+[a client program]
+6. How is a member function called?
+7. What is a current object?
+8. What is a constructor?
+9. What is a safe empty state?
+10. What is a query?
+11. How to create an array of C++ objects?
+
+[C++ member functions vs C functions]
+11. What is the difference between a C++ member function and a C function?
+
+
+
