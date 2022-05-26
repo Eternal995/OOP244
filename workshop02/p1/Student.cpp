@@ -42,7 +42,6 @@ namespace sdds {
 
     bool load(Student *student) {
 
-        bool success;
         char temp[128];
 
         if (!(read(temp) && read(student->no) && read(student->grade)))
