@@ -24,7 +24,7 @@ namespace sdds {
 
     int noOFStudents = 0;
 
-    Student *students = nullptr;
+    Student *students;
 
     void sort() {
         int i, j;
@@ -47,7 +47,7 @@ namespace sdds {
         if (!(read(temp) && read(student->no) && read(student->grade)))
             return false;
 
-        student->name = new char[strlen(temp)];
+        student->name = new char[strlen(temp) + 1];
 
         strcpy(student->name, temp);
 
@@ -70,6 +70,8 @@ namespace sdds {
                 return false;
             }
         }
+
+        closeFile();
 
         return true;
     }
