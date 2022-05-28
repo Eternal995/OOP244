@@ -33,7 +33,7 @@ namespace sdds {
             cout << "Data file \"" << filename << "\" not found!" << endl;
             return false;
         }
-        cout << "Birthdate Search Program" << endl;
+        cout << "Birthdate search program" << endl;
         return true;
     }
 
