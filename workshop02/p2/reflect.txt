@@ -1,0 +1,47 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : May 29, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is mainly focusing on dynamic memory allocation, with also some 
+practice on passing by referneces and function overloading. In my opinion they are
+not very difficult topics and I did not run into too much troubles with the topics.
+
+The problems I had with this workshop are:
+
+1. for part 2 of the workshop, I started reading each line of records from bd.csv
+using:
+
+fscanf(fp, "%[^,],%d/%d/%d\n", tempName, &tempMonth, &tempDate, &tempYear)
+
+this is working alright until I reach the last line of the file where there is no newline
+character in the end, so I was not able to read the last line correctly, then I switched to
+
+fscanf(fp, "\n%[^,],%d/%d/%d", tempName, &tempMonth, &tempDate, &tempYear)
+
+with this code I expect it to miss the first line of file, but it was able to read the 
+first line and last line correctly and I don't know why.
+
+2. another problem is more like optimization, for the readBirthDate function, 
+what I am doing now is I scan through the whole file first, find out how many people in the list
+will have birthdate in the desired month and allocate dynamic memory for that much people 
+and then go through the file another time to fill those people's information. 
+
+What I found another way to do it is I can create an array of pointer to Employee type 
+and initial all to nullptr, call it employee[some number]
+
+then as I go through the file, once I find a matching month I will allocate new memory for 
+just one employee type and use next null element employee[i] to point to that dynamic allocated memory.
+
+the advantage of this method is that I only need to go through whole file once and it would be really
+helpful for larger files that have thousands or millions of lines. But unless there is a way to have an 
+array that can change size during run time, this could consume more memory because of the pointer array.
+Thus I just stayed at what I am doing right now.

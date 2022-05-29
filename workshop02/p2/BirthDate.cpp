@@ -4,7 +4,7 @@ Full Name : Yongda Long
 Student ID# : 172800211
 Email : ylong9@myseneca.ca
 Section : OOP244NGG
-Date : May 30, 2022
+Date : May 29, 2022
 
 I have done all the coding by myself and only copied the code that
 my professor provided to complete my workshops and assignments.
@@ -41,7 +41,7 @@ namespace sdds {
         int count = 0;
         char tempName[31];
         int tempMonth, tempDate, tempYear;
-        while (fscanf(fp, "%[^,],%d/%d/%d\n", tempName, &tempMonth, &tempDate, &tempYear) == 4) {
+        while (fscanf(fp, "\n%[^,],%d/%d/%d", tempName, &tempMonth, &tempDate, &tempYear) == 4) {
             if (tempMonth == month)
                 count++;
         }
@@ -69,6 +69,7 @@ namespace sdds {
                 i++;
             }
         }
+        rewind(fp);
         return true;
     }
 
