@@ -71,7 +71,7 @@ namespace sdds {
         cout << arm2.checkNationality() << ", ";
 
         if (arm1.isStrongerThan(arm2)) {
-            cout << arm1.checkNationality() << "  is victorious!" << endl;
+            cout << arm1.checkNationality() << " is victorious!" << endl;
             arm2.updateUnits(-arm2.checkCapacity() / 2);
             return;
         }
