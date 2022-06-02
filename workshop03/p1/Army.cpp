@@ -66,15 +66,21 @@ namespace sdds {
     void battle(Army &arm1, Army &arm2) {
         if (arm1.isEmpty() || arm2.isEmpty())
             return;
+
+        cout << "In battle of " << arm1.checkNationality() << " and ";
+        cout << arm2.checkNationality() << ", ";
+
         if (arm1.isStrongerThan(arm2)) {
+            cout << arm1.checkNationality() << "  is victorious!" << endl;
             arm2.updateUnits(-arm2.checkCapacity() / 2);
             return;
         }
+        cout << arm2.checkNationality() << "  is victorious!" << endl;
         arm1.updateUnits(-arm1.checkCapacity() / 2);
     }
 
     void displayDetails(const Army *armies, int size) {
-        cout << "Armies reporting to battle:" << endl;
+        cout << "Armies reporting to battle: " << endl;
         for (int i = 0; i < size; i++) {
             if (!armies[i].isEmpty()) {
                 cout << "Nationality: " << armies[i].checkNationality() << ", Units Count: ";
