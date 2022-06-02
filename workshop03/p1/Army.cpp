@@ -75,7 +75,7 @@ namespace sdds {
             arm2.updateUnits(-arm2.checkCapacity() / 2);
             return;
         }
-        cout << arm2.checkNationality() << "  is victorious!" << endl;
+        cout << arm2.checkNationality() << " is victorious!" << endl;
         arm1.updateUnits(-arm1.checkCapacity() / 2);
     }
 
