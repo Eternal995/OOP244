@@ -14,5 +14,22 @@ my professor provided to complete my workshops and assignments.
 #include "Bar.h"
 
 namespace sdds {
+    class BarChart {
+        char *title;
+        Bar *bar;
+        char fill;
+        int size;
+        int added;
 
+    public:
+        BarChart();
+        void set_empty();
+        void init(const char *title_in, int no, char fill_in);
+        void add(const char *title_in, int no);
+        void draw() const;
+        void deallocate();
+        bool is_filled() const;
+        void reset_title();
+        void reset_bar();
+    };
 }
