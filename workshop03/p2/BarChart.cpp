@@ -64,13 +64,13 @@ namespace sdds {
         int i = 0;
         cout << title << endl;
         cout.fill('-');
-        cout.width(70);
+        cout.width(71);
         cout << "-" << endl;
         for (i = 0; i < added; i++) {
             bar[i].draw();
         }
         cout.fill('-');
-        cout.width(70);
+        cout.width(71);
         cout << "-" << endl;
     }
 
