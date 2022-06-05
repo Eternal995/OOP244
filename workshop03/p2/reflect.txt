@@ -1,0 +1,34 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : June 4, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is focusing on class type, using and creating member functions, 
+and how member functions are interacting with members in a class object(i.e querying
+and modifying). The concepts are fairly straight forward and the only problem I 
+encounter in this workshop is:
+
+1. 
+in the bar module, when I write the set() member function, since I am need to allocate
+dynamic memory for the title of the bar, so I tried to check if the title pointer
+is already pointing to some string already and if so I would like to deallocate 
+first. So what I do is:
+
+    if (title != nullptr)
+        reset();
+
+by checking if title is already pointing to something before I reset, then I ran into
+problem that when the bar object is created in barTester.cpp, it is not initialized
+and the title pointer is not nullptr and is not pointing to anywhere, so it is containing
+some garbage data, so it go through the reset() function, it has nothing to delete 
+so I run into some error, the only way I can solve this is by creating constructor
+that can initialize the title to nullptr. I don't know if there's any other way I can
+check if a pointer is already pointing to some dynamically allocated memory.
