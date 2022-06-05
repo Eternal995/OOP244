@@ -61,9 +61,7 @@ namespace sdds {
     }
 
     bool Bar::is_empty() const {
-        if (title == nullptr)
-            return true;
-        return false;
+        return (title == nullptr);
     }
 
     void Bar::reset() {
