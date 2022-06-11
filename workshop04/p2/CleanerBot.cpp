@@ -4,7 +4,7 @@ Full Name : Yongda Long
 Student ID# : 172800211
 Email : ylong9@myseneca.ca
 Section : OOP244NGG
-Date : , 2022
+Date : June 11, 2022
 
 I have done all the coding by myself and only copied the code that
 my professor provided to complete my workshops and assignments.
@@ -51,16 +51,7 @@ namespace sdds {
     }
 
     void CleanerBot::set(const char *location, double battery, int brush, bool active) {
-        if (bot_location != nullptr) {
-            delete[] bot_location;
-        }
-
-        if (location == nullptr || strlen(location) == 0) {
-            bot_location = nullptr;
-        } else {
-            bot_location = new char[strlen(location) + 1];
-            strcpy(bot_location, location);
-        }
+        setLocation(location);
         bot_battery = battery;
         bot_brush = brush;
         bot_active = active;

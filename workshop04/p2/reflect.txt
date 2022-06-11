@@ -1,0 +1,51 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : June 11, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is focusing on creating default and overloaded constructors, 
+creating destructors, and more on using member functions. 
+The problems I had with this workshop are:
+
+1.
+In the DIY section of the workshop, we are suppose to do a sorting of the 
+cleanerbot objects, which involves the process of exchanging two objects, 
+the way I initially think of doing is just by doing:
+CleanerBot temp;
+temp = object[i];
+object[i] = object[j];
+object[j] = temp;
+
+but this method is becoming tricky with dynamic memory. when copying the object,
+the temp object will also copy the address of location, which point to a string,
+thus whenever we exit the function, the destructor will run to delete the temp 
+object, which will result in losing the address of the string that temp is copying
+from some other object we are using, and thus lose the data. there are some ways
+of doing this process without the above happening, one way is to overload the '='
+operator so that when doing the exchange, the object is allocating new memory to 
+copy the string itself rather than copying the address only, but since operator overloading
+is beyond the scope of this workshop, I did it this way:
+CleanerBot temp;
+temp.set(bot[i].getLocation(), bot[i].getBattery(), bot[i].getBrush(), bot[i].isActive());
+bot[i].set(bot[maxPos].getLocation(), bot[maxPos].getBattery(), bot[maxPos].getBrush(), bot[maxPos].isActive());
+bot[maxPos].set(temp.getLocation(), temp.getBattery(), temp.getBrush(), temp.isActive());
+which can also work without losing any data or cause any memory leak.
+
+2.
+Some small problems are found in the DIY section of the workshop, such as some member
+functions are not being used in my code, such as 
+bool isActive() const;
+and
+void setActive(bool active);
+I am not sure if they are being used in some way which can improve the code, but since it is 
+DIY section I just leave them. also the function
+int report(CleanerBot *bot, short num_bots);
+is returning an integer which I don't really find any usage, so i just always return 0;
