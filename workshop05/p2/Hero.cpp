@@ -35,7 +35,6 @@ namespace sdds {
             m_power[i].createPower(power[i].checkName(), power[i].checkRarity());
         }
         this->updatePowerLevel();
-        cout << m_power << endl;
     }
 
     Hero::~Hero() {
