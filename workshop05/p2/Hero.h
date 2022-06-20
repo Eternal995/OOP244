@@ -39,7 +39,7 @@ namespace sdds {
     bool operator>(Hero &lhs, Hero &rhs);
     void operator<<(Hero &hero, Power &power);
     void operator>>(Power &power, Hero &hero);
-    std::ostream &operator<<(std::ostream &os = std::cout, const Hero &hero);
+    std::ostream &operator<<(std::ostream &os, const Hero &hero);
 }
 
 #endif
