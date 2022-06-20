@@ -33,13 +33,13 @@ namespace sdds {
         void updatePowerLevel();
         Hero &operator+=(Power &power);
         Hero &operator-=(int power);
-        std::ostream &display(std::ostream &os) const;
+        std::ostream &display(std::ostream &os = std::cout) const;
     };
     bool operator<(Hero &lhs, Hero &rhs);
     bool operator>(Hero &lhs, Hero &rhs);
     void operator<<(Hero &hero, Power &power);
     void operator>>(Power &power, Hero &hero);
-    std::ostream &operator<<(std::ostream &os, const Hero &hero);
+    std::ostream &operator<<(std::ostream &os = std::cout, const Hero &hero);
 }
 
 #endif
