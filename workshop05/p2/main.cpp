@@ -6,10 +6,10 @@ Filename: main.cpp
 Version 1.0
 -------------------------------------------------------*/
 
-#include <iostream>
+#include "Hero.h"
 #include <cstring>
+#include <iostream>
 using namespace std;
-#include "hero.h"
 using namespace sdds;
 void displayDetails(const Hero* heroes, int size);
 int main() {
