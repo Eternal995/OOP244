@@ -4,9 +4,45 @@ Full Name : Yongda Long
 Student ID# : 172800211
 Email : ylong9@myseneca.ca
 Section : OOP244NGG
-Date : , 2022
+Date : June 20, 2022
 
 I have done all the coding by myself and only copied the code that
 my professor provided to complete my workshops and assignments.
 *****************************************************************************
 */
+
+This Workshop is focusing mainly on operator overloading, most concepts are 
+straight forward, not much problems are encountered during this workshop, 
+some minor problems are:
+
+1.
+the insertion and extraction operator overloading that not involving iostream 
+is confusing, I cannot find any examples that doing these overloading without
+using istream& or ostream&, so what I initially tried is:
+
+    Hero &operator<<(Hero &hero, Power &power);
+
+that's copying from:
+
+    std::ostream &operator<<(std::ostream &os, const Hero &hero);
+
+but the output type is confusing, and in the workshop5 readme.md it is under 
+boolean helper operators, but if output type is boolean is also confusing.
+So after reviewing main.cpp code I can only use:
+
+    void operator<<(Hero &hero, Power &power);
+
+I don't know which is the correct approach since both are working correctly.
+
+2.
+some minor confusion about the this pointer, 
+I initially found that *this++ is not working from part 1 of the workshop 
+so what I wrote is:
+
+        Book temp = *this;
+        temp++;
+        *this = temp;
+
+Then after submitting I tested out that (*this)++ is working fine. I'm guessing 
+the priority of running is the postfix happens before dereferencing so I need to 
+parentheses the dereferencing part before ++;
