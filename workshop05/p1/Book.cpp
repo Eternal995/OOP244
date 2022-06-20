@@ -62,9 +62,10 @@ namespace sdds {
 
         m_chapters[m_num_chapters] = *chapter;
         m_num_pages += (int)*chapter;
-        Book temp = *this;
-        temp++;
-        *this = temp;
+        // Book temp = *this;
+        // temp++;
+        //*this = temp;
+        (*this)++;
         return m_num_chapters;
     }
 
@@ -108,8 +109,8 @@ namespace sdds {
     }
 
     bool Book::operator!() {
-        Book temp = *this;
-        return !((bool)temp);
+        // Book temp = *this;
+        return !((bool)(*this));
     }
 
     Book &Book::operator+=(Chapter &chapter) {
