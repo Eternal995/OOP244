@@ -77,10 +77,11 @@ namespace sdds {
             return *this;
         }
 
+        Power temp[m_num_power];
+
         m_num_power++;
 
-        Power temp[m_num_power];
-        for (int i = 0; i < m_num_power; i++) {
+        for (int i = 0; i < m_num_power - 1; i++) {
             temp[i].createPower(m_power[i].checkName(), m_power[i].checkRarity());
         }
 
