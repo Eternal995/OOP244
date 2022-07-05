@@ -100,7 +100,11 @@ namespace sdds {
         strcpy(temp[m_cnt - 1].m_name, fruit.m_name);
         temp[m_cnt - 1].m_qty = fruit.m_qty;
 
-        delete[] m_fruits;
+        if (m_cnt == 1) {
+            delete m_fruits;
+        } else {
+            delete[] m_fruits;
+        }
         m_fruits = temp;
         temp = nullptr;
 
