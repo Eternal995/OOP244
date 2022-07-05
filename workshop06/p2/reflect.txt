@@ -10,3 +10,42 @@ I have done all the coding by myself and only copied the code that
 my professor provided to complete my workshops and assignments.
 *****************************************************************************
 */
+
+This workshop is mainly focusing on the copy constructor and copy assignment operator.
+It is a straight forward concept and this workshop does not cause a lot problem.
+some details with this workshop:
+
+1.
+both part of the workshop involves overloading of operator +=, and thus needed to 
+add item to allocated dynamic memory, as the code showing:
+
+        Fruit *temp = nullptr;
+        temp = new Fruit[m_cnt + 1];
+
+        for (int i = 0; i < m_cnt; i++) {
+            strcpy(temp[i].m_name, m_fruits[i].m_name);
+            temp[i].m_qty = m_fruits[i].m_qty;
+        }
+
+        strcpy(temp[m_cnt].m_name, fruit.m_name);
+        temp[m_cnt].m_qty = fruit.m_qty;
+
+        delete[] m_fruits;
+
+        m_fruits = temp;
+        temp = nullptr;
+
+the way to do it is by creating a temp point and assignment one more object than
+the original memory and copy old data into new memory, then delete the old 
+allocated memory and change the pointer to pointing to the new allocated array.
+
+2.
+the main difference between copy constructor and copy assignment operator is that 
+for the copy assignment operator, we need to consider the situation that 
+the pointer is already pointing to some dynamically allocated memory, so 
+need to consider delete those before allocating new memory, as code shows:
+
+if (m_fruits != nullptr) {
+    delete[] m_fruits;
+    m_fruits = nullptr;
+}
