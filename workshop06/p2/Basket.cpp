@@ -35,7 +35,11 @@ namespace sdds {
     Basket::Basket(const Basket &source) {
         m_cnt = source.m_cnt;
         m_price = source.m_price;
-        m_fruits = new Fruit[m_cnt];
+        if (m_cnt == 1) {
+            m_fruits = new Fruit;
+        } else {
+            m_fruits = new Fruit[m_cnt];
+        }
 
         for (int i = 0; i < m_cnt; i++) {
             strcpy(m_fruits[i].m_name, source.m_fruits[i].m_name);
@@ -66,7 +70,11 @@ namespace sdds {
 
     Basket::~Basket() {
         if (m_fruits != nullptr) {
-            delete[] m_fruits;
+            if (m_cnt == 1) {
+                delete m_fruits;
+            } else {
+                delete[] m_fruits;
+            }
             m_fruits = nullptr;
         }
     }
@@ -89,24 +97,25 @@ namespace sdds {
         }
 
         Fruit *temp = nullptr;
-        m_cnt++;
-        temp = new Fruit[m_cnt];
+        temp = new Fruit[m_cnt + 1];
 
-        for (int i = 0; i < m_cnt - 1; i++) {
+        for (int i = 0; i < m_cnt; i++) {
             strcpy(temp[i].m_name, m_fruits[i].m_name);
             temp[i].m_qty = m_fruits[i].m_qty;
         }
 
-        strcpy(temp[m_cnt - 1].m_name, fruit.m_name);
-        temp[m_cnt - 1].m_qty = fruit.m_qty;
+        strcpy(temp[m_cnt].m_name, fruit.m_name);
+        temp[m_cnt].m_qty = fruit.m_qty;
 
         if (m_cnt == 1) {
             delete m_fruits;
         } else {
             delete[] m_fruits;
         }
+
         m_fruits = temp;
         temp = nullptr;
+        m_cnt++;
 
         return *this;
     }
