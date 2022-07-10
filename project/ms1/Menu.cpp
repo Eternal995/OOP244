@@ -36,11 +36,13 @@ namespace sdds {
     MenuItem::~MenuItem() {
         if (m_content != nullptr)
             delete[] m_content;
+        m_content = nullptr;
     }
 
     void MenuItem::set(const char *content) {
         if (m_content != nullptr) {
             delete[] m_content;
+            m_content = nullptr;
         }
 
         m_content = new char[strlen(content) + 1];
@@ -83,11 +85,8 @@ namespace sdds {
     }
 
     Menu::~Menu() {
-        if (m_title.m_content != nullptr) {
-            delete[] m_title.m_content;
-        }
         for (int i = 0; i < m_count; i++) {
-            delete[] m_item[i];
+            delete m_item[i];
             m_item[i] = nullptr;
         }
     }
