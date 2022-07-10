@@ -1,15 +1,20 @@
-// Final Project Milestone 1
-// Date Module
-// File  Date.h
-// Version 1.0
-// Author   Fardad Soleimanloo
-// Revision History
-// -----------------------------------------------------------
-// Name               Date                 Reason
-/////////////////////////////////////////////////////////////////
-#ifndef SDDS_DATE_H__
-#define SDDS_DATE_H__
+/* Citation and Sources...
+Final Project Milestone 1
+Module: Date
+Filename: Date.h
+Version 1.0
+Author	Yongda Long
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my project milestones.
+-----------------------------------------------------------
+*/
+
+#ifndef _SDDS_DATE_H_
+#define _SDDS_DATE_H_
+
 #include <iostream>
+
 namespace sdds {
    const int NO_ERROR = 0;
    const int CIN_FAILED = 1;
@@ -23,7 +28,9 @@ namespace sdds {
       "Bad Month Value",
       "Bad Day Value"
    };
+
    const int  MIN_YEAR = 1500;
+
    class Date {
    private:
       int m_year;
@@ -48,7 +55,16 @@ namespace sdds {
       const char* dateStatus()const;  // returns a string corresponding the current status of the date
       int currentYear()const;         // returns the m_CUR_YEAR value;
 
-
+      std::istream &read(std::istream &is = std::cin);
+      std::ostream &write(std::ostream &os = std::cout) const;
+      bool operator==(const Date &date) const;
+      bool operator!=(const Date &date) const;
+      bool operator>=(const Date &date) const;
+      bool operator<=(const Date &date) const;
+      bool operator>(const Date &date) const;
+      bool operator<(const Date &date) const;
+      int operator-(const Date &date) const;
+      operator bool() const;
    };
    std::ostream& operator<<(std::ostream& os, const Date& RO);
    std::istream& operator>>(std::istream& is, Date& RO);
