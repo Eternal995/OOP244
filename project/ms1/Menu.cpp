@@ -102,7 +102,9 @@ namespace sdds {
             os << ":" << std::endl;
         }
         for (int i = 0; i < m_count; i++) {
+            // os.setf(ios::fixed);
             os.width(2);
+            os.fill(' ');
             os << i + 1 << "- ";
             m_item[i]->display(os);
             os << endl;
