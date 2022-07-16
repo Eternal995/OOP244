@@ -17,7 +17,7 @@ my professor provided to complete my workshops and assignments.
 namespace sdds {
     Minister::Minister(const char *id, int age, int year, const char *district, const char *pm)
         : MemberParliament(id, age) {
-        setDistrict(district);
+        NewDistrict(district);
         changePM(pm);
         assumeOffice(year);
     }
