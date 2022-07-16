@@ -26,7 +26,6 @@ namespace sdds {
 
     public:
         MemberParliament(const char *id = nullptr, int age = 0);
-        void setAge(int age);
         void setDistrict(const char *district);
         void NewDistrict(const char *district);
         std::ostream &write(std::ostream &os = std::cout) const;

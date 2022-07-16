@@ -27,10 +27,6 @@ namespace sdds {
         strcpy(m_id, id);
     }
 
-    void MemberParliament::setAge(int age) {
-        m_age = age;
-    }
-
     void MemberParliament::setDistrict(const char *district) {
         if (district != nullptr)
             strcpy(m_district, district);
@@ -58,15 +54,12 @@ namespace sdds {
     }
 
     std::istream &MemberParliament::read(std::istream &is) {
-        int age = 0;
         std::cout << "Age: ";
-        is >> age;
-        setAge(age);
+        is >> m_age;
         std::cout << "Id: ";
         is >> m_id;
         std::cout << "District: ";
         is >> m_district;
-        std::cout << m_district << std::endl;
         return is;
     }
 
