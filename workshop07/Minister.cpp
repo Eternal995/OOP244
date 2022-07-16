@@ -15,7 +15,7 @@ my professor provided to complete my workshops and assignments.
 #include <cstring>
 
 namespace sdds {
-    Minister::Minister(const char *id, int age, int year, const char *district, const char *pm)
+    Minister::Minister(const char *id, int age, int year, const char *pm, const char *district)
         : MemberParliament(id, age) {
         NewDistrict(district);
         changePM(pm);

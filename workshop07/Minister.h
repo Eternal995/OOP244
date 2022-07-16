@@ -24,7 +24,7 @@ namespace sdds {
         int m_year;
 
     public:
-        Minister(const char *id = nullptr, int age = 0, int year = 0, const char *district = nullptr, const char *pm = nullptr);
+        Minister(const char *id = nullptr, int age = 0, int year = 0, const char *pm = nullptr, const char *district = nullptr);
         void changePM(const char *pm);
         void assumeOffice(int year);
         std::ostream &write(std::ostream &os = std::cout) const;
