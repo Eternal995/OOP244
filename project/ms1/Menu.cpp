@@ -99,7 +99,7 @@ namespace sdds {
     std::ostream &Menu::display(std::ostream &os) const {
         if (m_title != nullptr) {
             m_title.display(os);
-            os << std::endl;
+            os << ":" << std::endl;
         }
         for (int i = 0; i < m_count; i++) {
             // os.setf(ios::fixed);
