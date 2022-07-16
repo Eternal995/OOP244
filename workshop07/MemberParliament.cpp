@@ -59,10 +59,10 @@ namespace sdds {
 
     std::istream &MemberParliament::read(std::istream &is) {
         int age = 0;
-        std::cout << "MP Age: ";
+        std::cout << "Age: ";
         is >> age;
         setAge(age);
-        std::cout << "MP Id: ";
+        std::cout << "Id: ";
         is >> m_id;
         std::cout << "District: ";
         is >> m_district;
