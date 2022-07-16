@@ -53,5 +53,9 @@
     },
     "cSpell.words": [
         "Birthdate"
+    ],
+    "cSpell.ignoreWords": [
+        "MEMBERPARLIAMENT",
+        "reportsto"
     ]
 }
