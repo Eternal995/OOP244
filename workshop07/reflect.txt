@@ -10,3 +10,24 @@ I have done all the coding by myself and only copied the code that
 my professor provided to complete my workshops and assignments.
 *****************************************************************************
 */
+
+This workshop is mainly about inheriting derived class from base class, 
+shadowing base class member functions, and interactions between base class 
+and derived class. I did not encounter too much trouble completing this workshop,
+here are some points I want to remind myself about this workshop:
+
+1.
+about constructor and destructor about derived class, when creating an object of a 
+derived class, constructor of base class will be invoked first, then constructor of
+the derived class will then be invoked, but for destructor it is the opposite, the 
+derived class' destructor will be invoked before base class. Note the difference with 
+creating and object of another class(say class A) inside an object of current class
+(class B), class B's constructor will be invoked first then class A, and class A's 
+destructor will be invoked before class B's.
+
+2.
+even though we use public inheritance when creating derived class, note that we still
+cannot access private members of the base class, public inheritance means that public 
+members of base class will be public for the derived class, protected and private 
+members will remain its access specifiers in the derived class. That means we will not 
+be able to access private members from base class even though the inheritance is public.
