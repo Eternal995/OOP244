@@ -32,7 +32,7 @@ namespace sdds {
 
     bool LibApp::confirm(const char *message) const {
         Menu menu{message};
-        menu << "yes";
+        menu << "Yes";
         return (menu.run() == 1);
     }
 
