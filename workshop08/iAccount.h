@@ -25,6 +25,7 @@ namespace sdds {
         virtual void display(std::ostream &os) const = 0;
         virtual ~iAccount() {}
     };
+    iAccount *CreateAccount(const char *, double);
 }
 
 #endif
