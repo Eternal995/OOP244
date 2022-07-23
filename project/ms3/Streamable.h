@@ -14,7 +14,17 @@ that my professor provided to complete my project milestones.
 #define _SDDS_STREAMABLE_H_
 
 #include <iostream>
+
 namespace sdds {
+    class Streamable {
+        virtual std::ostream &write(std::ostream &os) const = 0;
+        virtual std::istream &read(std::istream &is) = 0;
+        virtual bool conIO(std::ios &ios) const = 0;
+        virtual operator bool() const = 0;
+        virtual ~Streamable() {}
+    };
+    std::ostream &operator<<(std::ostream &os, const Streamable &streamable);
+    std::istream &operator>>(std::istream &is, Streamable &streamable);
 }
 
 #endif // !
