@@ -1,0 +1,33 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : July 23, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is mainly focus on pure virtual function and abstract classes.
+For example the abstract class used in this workshop:
+
+class iAccount {
+    public:
+        virtual bool credit(double amount) = 0;
+        virtual bool debit(double amount) = 0;
+        virtual void monthEnd() = 0;
+        virtual void display(std::ostream &os) const = 0;
+        virtual ~iAccount() {}
+    };
+
+is consistent of only pure functions, and is used as base class for all other classes 
+derived in this workshop.
+
+The problem with I had with this workshop is that initially I did not know how to work with 
+the Allocator.cpp file, I tried to include the file in the iAccount.h header file but it is 
+not correct, and turns out I only need to add a declaration as:
+
+iAccount *CreateAccount(const char *, double);
