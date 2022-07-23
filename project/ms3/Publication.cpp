@@ -137,7 +137,7 @@ namespace sdds {
 
         char temp_shelfID[SDDS_SHELF_ID_LEN + 1];
         char temp_title[SDDS_TITLE_WIDTH + 1];
-        int temp_membership, temp_libRef;
+        int temp_membership = 0, temp_libRef = -1;
         Date temp_date;
 
         if (conIO(is)) {
