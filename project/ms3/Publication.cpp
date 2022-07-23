@@ -106,9 +106,9 @@ namespace sdds {
             os.width(30);
             os << m_title;
             if (onLoan()) {
-                cout << m_membership;
+                os << m_membership;
             } else {
-                cout << " N/A ";
+                os << " N/A ";
             }
             os << " | " << m_date << " |";
             os.unsetf(std::ios::left);
@@ -117,9 +117,9 @@ namespace sdds {
         }
         os << type() << "\t" << m_libRef << "\t" << m_shelfID << "\t" << m_title << "\t";
         if (onLoan()) {
-            cout << m_membership;
+            os << m_membership;
         } else {
-            cout << " N/A ";
+            os << " N/A ";
         }
         os << "\t" << m_date;
         return os;
