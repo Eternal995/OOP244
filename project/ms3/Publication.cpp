@@ -103,7 +103,7 @@ namespace sdds {
             os.setf(std::ios::left);
             os << "| " << m_shelfID << " | ";
             os.fill('.');
-            os.width(30);
+            os.width(SDDS_TITLE_WIDTH);
             os << m_title;
             if (onLoan()) {
                 os << m_membership;
@@ -148,7 +148,7 @@ namespace sdds {
             std::cout << "Title: ";
             is.getline(temp_title, SDDS_TITLE_WIDTH + 1);
             std::cout << "Date: ";
-            is >> temp_date;
+            temp_date.read(is);
         } else {
             is >> temp_libRef;
             is.ignore();
