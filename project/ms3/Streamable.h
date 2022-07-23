@@ -17,6 +17,7 @@ that my professor provided to complete my project milestones.
 
 namespace sdds {
     class Streamable {
+    public:
         virtual std::ostream &write(std::ostream &os) const = 0;
         virtual std::istream &read(std::istream &is) = 0;
         virtual bool conIO(std::ios &ios) const = 0;

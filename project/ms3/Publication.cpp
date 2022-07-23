@@ -20,7 +20,7 @@ namespace sdds {
         m_shelfID[0] = '\0';
         m_membership = 0;
         m_libRef = -1;
-        m_date.setToToday();
+        m_date = Date();
     }
 
     Publication::Publication(const Publication &source) {
@@ -58,7 +58,7 @@ namespace sdds {
         delete[] m_title;
     }
 
-    virtual void Publication::set(int member_id) {
+    void Publication::set(int member_id) {
         m_membership = (member_id >= 10000 && member_id <= 99999) ? member_id : 0;
     }
 
@@ -67,7 +67,7 @@ namespace sdds {
     }
 
     void Publication::resetDate() {
-        m_date.setToToday();
+        m_date = Date();
     }
 
     char Publication::type() const {
@@ -95,7 +95,7 @@ namespace sdds {
     }
 
     bool Publication::conIO(std::ios &io) const {
-        return (&io == &cout || &io == &cin);
+        return (&io == &std::cout || &io == &std::cin);
     }
 
     std::ostream &Publication::write(std::ostream &os) const {
@@ -105,15 +105,15 @@ namespace sdds {
             os.fill('.');
             os.width(30);
             os << m_title;
-            os << ((onLoan()) ? m_membership : " N/A ");
+            onLoan() ? os << m_membership : os << " N/A ";
             os << " | " << m_date << " |";
             os.unsetf(std::ios::left);
             os.fill(' ');
             return os;
         }
         os << type() << "\t" << m_libRef << "\t" << m_shelfID << "\t" << m_title << "\t";
-        os << ((onLoan()) ? m_membership : " N/A ");
-        os << "\t" << date;
+        onLoan() ? os << m_membership : os << " N/A ";
+        os << "\t" << m_date;
         return os;
     }
 
@@ -125,7 +125,7 @@ namespace sdds {
         m_shelfID[0] = '\0';
         m_membership = 0;
         m_libRef = -1;
-        m_date.setToToday();
+        m_date = Date();
 
         char temp_shelfID[SDDS_SHELF_ID_LEN + 1];
         char temp_title[SDDS_TITLE_WIDTH + 1];
@@ -145,7 +145,7 @@ namespace sdds {
             is >> temp_libRef;
             is.ignore();
             is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1, '\t');
-            is.getline(t_title, SDDS_TITLE_WIDTH + 1, '\t');
+            is.getline(temp_title, SDDS_TITLE_WIDTH + 1, '\t');
             is >> temp_membership;
             is.ignore();
             is >> temp_date;

@@ -13,13 +13,13 @@ that my professor provided to complete my project milestones.
 #include "Streamable.h"
 
 namespace sdds {
-    std::ostream &Streamable::operator<<(std::ostream &os, const Streamable &streamable) {
+    std::ostream &operator<<(std::ostream &os, const Streamable &streamable) {
         if (streamable)
             streamable.write(os);
         return os;
     }
 
-    std::istream &Streamable::operator>>(std::istream &is, Streamable &streamable) {
+    std::istream &operator>>(std::istream &is, Streamable &streamable) {
         return streamable.read(is);
     }
 }
