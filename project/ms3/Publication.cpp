@@ -104,7 +104,7 @@ namespace sdds {
             os << "| " << m_shelfID << " | ";
             os.fill('.');
             os.width(SDDS_TITLE_WIDTH);
-            os << m_title;
+            os << m_title << " | ";
             if (onLoan()) {
                 os << m_membership;
             } else {
