@@ -148,7 +148,8 @@ namespace sdds {
             std::cout << "Title: ";
             is.getline(temp_title, SDDS_TITLE_WIDTH + 1);
             std::cout << "Date: ";
-            temp_date.read(is);
+            if (is)
+                temp_date.read(is);
         } else {
             is >> temp_libRef;
             is.ignore();

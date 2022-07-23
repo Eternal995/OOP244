@@ -141,9 +141,11 @@ namespace sdds {
         os.width(2);
         os.fill('0');
         os << m_mon << "/";
+        os.setf(ios::right);
         os.width(2);
         os.fill('0');
         os << m_day;
+        os.unsetf(ios::right);
 
         return os;
     }
