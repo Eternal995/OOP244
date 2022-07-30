@@ -136,7 +136,7 @@ namespace sdds {
         m_date = Date();
 
         char temp_shelfID[SDDS_SHELF_ID_LEN + 1];
-        char temp_title[SDDS_TITLE_WIDTH + 1];
+        char temp_title[256];
         int temp_membership = 0, temp_libRef = -1;
         Date temp_date;
 
@@ -146,7 +146,7 @@ namespace sdds {
             if (strlen(temp_shelfID) != SDDS_SHELF_ID_LEN)
                 is.setstate(std::ios::failbit);
             std::cout << "Title: ";
-            is.getline(temp_title, SDDS_TITLE_WIDTH + 1);
+            is >> temp_title;
             std::cout << "Date: ";
             if (is)
                 temp_date.read(is);
@@ -164,8 +164,8 @@ namespace sdds {
             is.setstate(std::ios::failbit);
 
         if (is) {
-            m_title = new char[strlen(temp_title) + 1];
-            strcpy(m_title, temp_title);
+            m_title = new char[(strlen(temp_title) > SDDS_TITLE_WIDTH) ? (SDDS_TITLE_WIDTH + 1) : (strlen(temp_title) + 1)];
+            strncpy(m_title, temp_title, SDDS_TITLE_WIDTH);
             strcpy(m_shelfID, temp_shelfID);
             m_membership = temp_membership;
             m_date = temp_date;
