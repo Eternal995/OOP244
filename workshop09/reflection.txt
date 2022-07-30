@@ -1,0 +1,23 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : July 30, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is continuing working on derived functions and virtual functions.
+Overall it is a straight forward workshop and I did not encounter too much problem.
+
+Biggest trouble I had with this workshop was:
+I was able to read all the names from file, but while sorting and other things are 
+working fine, I was not able to print out the names for simpson's family, 
+After reading through operator== function in main.cpp and some testing I found that
+when I read last name the string will end with an extra space, which caused the 
+last to be different from 'Simpson', I fixed it by changing getline in the read method
+to get and it solves the problem, which I don't know why.
