@@ -102,9 +102,15 @@ namespace sdds {
         if (conIO(os)) {
             os.setf(std::ios::left);
             os << "| " << m_shelfID << " | ";
-            os.fill('.');
-            os.width(SDDS_TITLE_WIDTH);
-            os << m_title << " | ";
+            if (strlen(m_title) > SDDS_TITLE_WIDTH) {
+                for (int i = 0; i < SDDS_TITLE_WIDTH; i++)
+                    os << m_title[i];
+            } else {
+                os.fill('.');
+                os.width(SDDS_TITLE_WIDTH);
+                os << m_title;
+            }
+            os << " | ";
             if (onLoan()) {
                 os << m_membership;
             } else {
@@ -142,11 +148,11 @@ namespace sdds {
 
         if (conIO(is)) {
             std::cout << "Shelf No: ";
-            is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1);
+            is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1, '\n');
             if (strlen(temp_shelfID) != SDDS_SHELF_ID_LEN)
                 is.setstate(std::ios::failbit);
             std::cout << "Title: ";
-            is >> temp_title;
+            is.getline(temp_title, 256, '\n');
             std::cout << "Date: ";
             if (is)
                 temp_date.read(is);
@@ -154,7 +160,7 @@ namespace sdds {
             is >> temp_libRef;
             is.ignore();
             is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1, '\t');
-            is.getline(temp_title, SDDS_TITLE_WIDTH + 1, '\t');
+            is.getline(temp_title, 256, '\t');
             is >> temp_membership;
             is.ignore();
             is >> temp_date;
@@ -164,8 +170,8 @@ namespace sdds {
             is.setstate(std::ios::failbit);
 
         if (is) {
-            m_title = new char[(strlen(temp_title) > SDDS_TITLE_WIDTH) ? (SDDS_TITLE_WIDTH + 1) : (strlen(temp_title) + 1)];
-            strncpy(m_title, temp_title, SDDS_TITLE_WIDTH);
+            m_title = new char[strlen(temp_title) + 1];
+            strcpy(m_title, temp_title);
             strcpy(m_shelfID, temp_shelfID);
             m_membership = temp_membership;
             m_date = temp_date;

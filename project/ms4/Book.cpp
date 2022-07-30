@@ -97,15 +97,15 @@ namespace sdds {
         if (Publication::conIO(is)) {
             is.ignore(1);
             std::cout << "Author: ";
-            is >> temp;
+            is.getline(temp, 256, '\n');
         } else {
             is.ignore();
-            is >> temp;
+            is.getline(temp, 256, '\n');
         }
 
         if (is) {
-            m_author = new char[(strlen(temp) > SDDS_AUTHOR_WIDTH) ? (SDDS_AUTHOR_WIDTH + 1) : (strlen(temp) + 1)];
-            strncpy(m_author, temp, SDDS_AUTHOR_WIDTH);
+            m_author = new char[strlen(temp) + 1];
+            strcpy(m_author, temp);
         }
 
         return is;
