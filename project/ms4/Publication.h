@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 3
+Final Project Milestone 4
 Module: Publication
 Filename: Publication.h
 Version 1.0
@@ -29,7 +29,7 @@ namespace sdds {
         Publication();
         Publication(const Publication &source);
         Publication &operator=(const Publication &source);
-        ~Publication();
+        virtual ~Publication();
 
         virtual void set(int member_id);
         void setRef(int value);

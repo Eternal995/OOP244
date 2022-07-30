@@ -1,6 +1,6 @@
 /* Citation and Sources...
-Final Project Milestone 3
-Module: Date
+Final Project Milestone 4
+Module: Lib
 Filename: Lib.h
 Version 1.0
 Author	Yongda Long
