@@ -92,15 +92,15 @@ namespace sdds {
             m_author = nullptr;
         }
 
-        char temp[256];
+        char temp[256]{};
 
         if (Publication::conIO(is)) {
-            is.ignore(1);
+            is.ignore();
             std::cout << "Author: ";
-            is.getline(temp, 256, '\n');
+            is.get(temp, 256);
         } else {
             is.ignore();
-            is.getline(temp, 256, '\n');
+            is.get(temp, 256);
         }
 
         if (is) {
@@ -112,6 +112,6 @@ namespace sdds {
     }
 
     Book::operator bool() const {
-        return ((m_author != nullptr) && (m_author[0] != '\0') && Publication::operator bool());
+        return (m_author && (m_author[0] != '\0') && Publication::operator bool());
     }
 }

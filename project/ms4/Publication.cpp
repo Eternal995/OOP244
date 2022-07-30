@@ -148,11 +148,11 @@ namespace sdds {
 
         if (conIO(is)) {
             std::cout << "Shelf No: ";
-            is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1, '\n');
+            is.getline(temp_shelfID, SDDS_SHELF_ID_LEN + 1);
             if (strlen(temp_shelfID) != SDDS_SHELF_ID_LEN)
                 is.setstate(std::ios::failbit);
             std::cout << "Title: ";
-            is.getline(temp_title, 256, '\n');
+            is.getline(temp_title, 256);
             std::cout << "Date: ";
             if (is)
                 temp_date.read(is);

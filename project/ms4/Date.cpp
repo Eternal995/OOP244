@@ -124,8 +124,6 @@ namespace sdds {
             return is;
         }
 
-        is.clear();
-
         validate();
 
         return is;
