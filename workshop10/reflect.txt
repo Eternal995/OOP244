@@ -1,0 +1,33 @@
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : August 4, 2022
+
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop is mainly focusing on working with function templates.
+
+with the help of Collection.h implementation of collection template class, I am 
+able to create 4 functions using template types:
+
+
+    // Find with 3 parameters
+    // overload of operator == is needed in this function
+
+    
+    // Find with 4 parameters
+    // overload of operator == is needed in this function
+
+    
+    // Insertion operator
+    // overload of operator[i] and member function size() of the collection template is needed in this function
+
+    
+    // Load Collection
+    // overload of operator+= of the Collection template is needed in this function
