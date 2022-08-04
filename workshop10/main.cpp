@@ -109,11 +109,11 @@ int main()
 
     cout << "Our results of our Book search: (Dune, IncorrectTitle, Frankenstein, Foundation)" << endl;
     //print out our collection of searched books
-    cout bCol2;  //****TODO 3:
+    cout << bCol2;  //****TODO 3:
 
     cout << endl << "All the books listed in our collection: " << endl;
     //print out our collection of all books
-    cout bCol;  //****TODO 3:
+    cout << bCol;  //****TODO 3:
 
     // Call the find function to search the array P
     // and store the matches in pCol2 passing the key "Dog" into your find function 
@@ -126,11 +126,11 @@ int main()
 
     cout << endl << "All the Pets listed in our collection: " << endl;
     //print out our collection of all pet
-    cout pCol;  //****TODO 3:
+    cout << pCol;  //****TODO 3:
 
     cout  << endl <<"Our results of our Pet Query: (Dog)" << endl;
     //print out our collection of filtered pets
-    cout pCol2;  //****TODO 3:
+    cout << pCol2;  //****TODO 3:
 
     int a[]{90,80,90,70,60,30 };
 
@@ -145,7 +145,7 @@ int main()
     }
 
     cout << endl << "Our results of int Filter:" << endl;
-    cout iCol;  //****TODO 3:
+    cout << iCol;  //****TODO 3:
 
     return 0;
 }
