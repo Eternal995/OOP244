@@ -1,11 +1,15 @@
-// Workshop 10:
-// Collection template
-// 2022-02-25
-// Version: 1.0 
-// Author: Nathan Misener
-// Revised by: 
-/////////////////////////////////////////////
+/*
+*****************************************************************************
+Full Name : Yongda Long
+Student ID# : 172800211
+Email : ylong9@myseneca.ca
+Section : OOP244NGG
+Date : August 4, 2022
 
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
 
 #include <iostream>
 #include "Card.h"
@@ -42,25 +46,24 @@ int main()
     // Loading up the collections of Cards
     for (ii = 0; ii < 7; ii++) {
         //Load the collection of cards into cCol1
-        loadCollection(_________);  //****TODO 4:
+        loadCollection(cCol1, C[ii]);  //****TODO 4:
     }
 
     // Loading up the collections of Books
     for (ii = 0; ii < 6; ii++) {
         //Load the collection of cards into bCol
-        loadCollection(__________); //****TODO 4:
+        loadCollection(bCol, B[ii]);  //****TODO 4:
     }
 
     // Loading up the collections of Pets
     for (ii = 0; ii < 6; ii++) {
         //Load the collection of cards into pCol
-        loadCollection(_________); //****TODO 4:
+        loadCollection(pCol, P[ii]);  //****TODO 4:
     }
 
     //Printing out all the Cards using the ostream insertion operator
     cout << "Printing all the Cards:" << endl;
-    cout _________; //****TODO 3:
-    
+    cout << cCol1;  //****TODO 3:
 
     cout << endl;
     cout << "Searching for King of Hearts, Jack of Diamonds and 10 of Spades cards: " << endl;
@@ -70,24 +73,22 @@ int main()
     const char* suits[] = { "Spades", "Diamonds", "Spades" };
     for (ii = 0; ii < 3; ii++) {
         //call the 4 argument find function with values from the 2 above arrays
-        index = find(_________); //****TODO 2:
+        index = find(C, valuesToSearch[ii], suits[ii], 7);  //****TODO 2:
         if (index >= 0) {
-            //add the found object at the corresponding index to cCol2. (Review the Collection code for the correct operator) 
-            loadCollection(_________);   //****TODO 4:
+            // add the found object at the corresponding index to cCol2. (Review the Collection code for the correct operator)
+            loadCollection(cCol2, C[index]);  //****TODO 4:
         }
     }
 
     //Search for all "Hearts" cards
     for (ii = 0; ii < 7; ii++) {
-        if (find(_________)) { //****TODO 1:
-            loadCollection(_________); //****TODO 4:
+        if (find(C, "Hearts", ii)) {       //****TODO 1:
+            loadCollection(cCol2, C[ii]);  //****TODO 4:
         }
     }
 
     //Printing cards found in our searches
-    cout _________; //****TODO 3:
-
-
+    cout << cCol2;  //****TODO 3:
 
     // Call the find function to search the array B 
     // and store the matches in bCol2 passing the following parallel array arguments as the key
@@ -96,10 +97,10 @@ int main()
     const char* titlesToSearch[] = { "Dune", "IncorrectTitle", "Frankenstein", "Foundation"};
     for (ii = 0; ii < 4; ii++) {
         //call the 4 argument find function with values from the 2 above arrays
-        index = find(_________); //****TODO 2:
+        index = find(B, upcToSearch[ii], titlesToSearch[ii], 6);  //****TODO 2:
         if (index >= 0) {
-            //add the found object at the corresponding index to cCol2. (Review the Collection code for the correct operator) 
-            loadCollection(_________);    //****TODO 4:
+            // add the found object at the corresponding index to cCol2. (Review the Collection code for the correct operator)
+            loadCollection(bCol2, B[index]);  //****TODO 4:
         }
         else {
             cout << endl << "(" << upcToSearch[ii] << " " << titlesToSearch[ii] << "), is not in our collection of books" << endl << endl;
@@ -108,30 +109,28 @@ int main()
 
     cout << "Our results of our Book search: (Dune, IncorrectTitle, Frankenstein, Foundation)" << endl;
     //print out our collection of searched books
-    cout _________; //****TODO 3:
+    cout bCol2;  //****TODO 3:
 
     cout << endl << "All the books listed in our collection: " << endl;
     //print out our collection of all books
-    cout _________; //****TODO 3:
-
-
+    cout bCol;  //****TODO 3:
 
     // Call the find function to search the array P
     // and store the matches in pCol2 passing the key "Dog" into your find function 
 
     for (ii = 0; ii < 6; ii++) {
-        if (find(_________)) { //****TODO 1:
-            loadCollection(_________); //****TODO 4:
+        if (find(P, "Dog", ii)) {          //****TODO 1:
+            loadCollection(pCol2, P[ii]);  //****TODO 4:
         }
     }
 
     cout << endl << "All the Pets listed in our collection: " << endl;
     //print out our collection of all pet
-    cout _________; //****TODO 3:
+    cout pCol;  //****TODO 3:
 
     cout  << endl <<"Our results of our Pet Query: (Dog)" << endl;
     //print out our collection of filtered pets
-    cout _________; //****TODO 3:
+    cout pCol2;  //****TODO 3:
 
     int a[]{90,80,90,70,60,30 };
 
@@ -140,13 +139,13 @@ int main()
     // Insert the iCol into the cout stream
 
     for (ii = 0; ii < 6; ii++) {
-        if (find(_________)) { //****TODO 1:
-            loadCollection(_________); //****TODO 4:
+        if (find(a, 90, ii)) {            //****TODO 1:
+            loadCollection(iCol, a[ii]);  //****TODO 4:
         }
     }
 
     cout << endl << "Our results of int Filter:" << endl;
-    cout _________; //****TODO 3:
+    cout iCol;  //****TODO 3:
 
     return 0;
 }
