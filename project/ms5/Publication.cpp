@@ -122,13 +122,13 @@ namespace sdds {
             os.fill(' ');
             return os;
         }
-        os << type() << "\t" << m_libRef << "\t" << m_shelfID << "\t" << m_title << "\t";
-        if (onLoan()) {
-            os << m_membership;
-        } else {
-            os << " N/A ";
-        }
-        os << "\t" << m_date;
+        os << type() << "\t" << m_libRef << "\t" << m_shelfID << "\t" << m_title << "\t" << m_membership << "\t" << m_date;
+        // if (onLoan()) {
+        //     os << m_membership;
+        // } else {
+        //     os << " N/A ";
+        // }
+        // os << "\t" << m_date;
         return os;
     }
 
