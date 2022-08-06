@@ -265,7 +265,7 @@ namespace sdds {
             double penalty = ((double)date - (double)SDDS_MAX_LOAN_DAYS) * 0.5;
             cout.setf(ios::fixed);
             cout.precision(2);
-            cout << "Please pay $" << penalty << " penalty for being " << date << " days late!" << endl;
+            cout << "Please pay $" << penalty << " penalty for being " << date - SDDS_MAX_LOAN_DAYS << " days late!" << endl;
         }
         getPub(ref)->set(0);
         m_changed = true;
