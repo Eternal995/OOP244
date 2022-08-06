@@ -209,7 +209,7 @@ namespace sdds {
         int ref = search(SDDS_SEARCH_ALL);
 
         if (ref <= 0) {
-            cout << "Aborted!" << endl;
+            // cout << "Aborted!" << endl;
             return;
         }
 
