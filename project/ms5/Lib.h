@@ -24,6 +24,19 @@ namespace sdds {
     // The width in which the shelf id of a publication should be printed on the console
     const int SDDS_LIBRARY_CAPACITY = 5000;
     // Maximum number of publications the library can hold.
+
+    const int SDDS_FILE_NAME = 256;
+    // Maximum number of characters for data file name
+
+    const int SDDS_SEARCH_ALL = 1;
+    const int SDDS_SEARCH_CHECKOUT = 2;
+    const int SDDS_SEARCH_AVAILABLE = 3;
+    // 3 different modes for search member function of LibApp Class
+
+    const int SDDS_DEFAULT_PAGE_SIZE = 15;
+    // Default page size for selector menu
+    const int SDDS_TITLE_SEARCH = 256;
+    // Maximum number of characters for searching title
 }
 
 #endif // !

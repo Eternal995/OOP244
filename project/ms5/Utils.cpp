@@ -26,4 +26,17 @@ namespace sdds {
         }
         return input;
     }
+
+    int inputMemberNo() {
+        int input = 0;
+        cout << "Enter Membership number: ";
+        cin >> input;
+        while (input > 99999 || input < 10000 || cin.fail()) {
+            cin.clear();
+            cin.ignore(2000, '\n');
+            cout << "Invalid membership number, try again: ";
+            cin >> input;
+        }
+        return input;
+    }
 }

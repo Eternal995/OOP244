@@ -16,6 +16,7 @@ that my professor provided to complete my project milestones.
 #include <iostream>
 namespace sdds {
     unsigned int inputInt(int max);
+    int inputMemberNo();
 }
 
 #endif  // !

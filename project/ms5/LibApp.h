@@ -16,24 +16,34 @@ that my professor provided to complete my project milestones.
 #include <iostream>
 
 #include "Menu.h"
+#include "Publication.h"
 
 namespace sdds {
     class LibApp {
         bool m_changed;
         Menu m_mainMenu;
         Menu m_exitMenu;
+        char m_file[SDDS_FILE_NAME];
+        Publication *m_pub[SDDS_LIBRARY_CAPACITY];
+        int m_numLoaded;
+        int m_lastRef;
+        Menu m_type;
 
         bool confirm(const char *message) const;
-        void load() const;
+        void load();
         void save() const;
-        void search() const;
-        void returnPub();
+        int search(int mode) const;
+        Publication *getPub(int libRef) const;
         void newPublication();
         void removePublication();
         void checkOutPub();
+        void returnPub();
 
       public:
-        LibApp();
+        LibApp(const char *file);
+        ~LibApp();
+        LibApp(const LibApp &source) = delete;
+        LibApp &operator=(const LibApp &source) = delete;
         void run();
     };
 }
