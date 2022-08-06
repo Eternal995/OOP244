@@ -245,7 +245,7 @@ namespace sdds {
     }
 
     void LibApp::returnPub() {
-        cout << "Returning publication" << endl;
+        cout << "Return publication to the library" << endl;
 
         int ref = search(SDDS_SEARCH_CHECKOUT);
 
