@@ -204,7 +204,7 @@ namespace sdds {
     }
 
     void LibApp::removePublication() {
-        cout << "Removing publication from library" << endl;
+        cout << "Removing publication from the library" << endl;
 
         int ref = search(SDDS_SEARCH_ALL);
 
