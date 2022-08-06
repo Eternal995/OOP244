@@ -259,10 +259,10 @@ namespace sdds {
             return;
         }
 
-        Date today(2022, 8, 6);
+        Date today;
         int date = today - getPub(ref)->checkoutDate();
         if (date > SDDS_MAX_LOAN_DAYS) {
-            double penalty = (double)date * 0.5;
+            double penalty = ((double)date - (double)SDDS_MAX_LOAN_DAYS) * 0.5;
             cout.setf(ios::fixed);
             cout.precision(2);
             cout << "Please pay $" << penalty << " penalty for being " << date << " days late!" << endl;
