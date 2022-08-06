@@ -259,7 +259,7 @@ namespace sdds {
             return;
         }
 
-        Date today;
+        Date today(2022, 7, 26);
         int date = today - getPub(ref)->checkoutDate();
         if (date > SDDS_MAX_LOAN_DAYS) {
             double penalty = (double)date * 0.5;
