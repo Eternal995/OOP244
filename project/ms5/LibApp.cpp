@@ -105,6 +105,8 @@ namespace sdds {
         if (type == 'B' || type == 'P') {
             char title[SDDS_TITLE_SEARCH];
             cout << "Publication Title: ";
+            cin.clear();
+            cin.ignore(2000, '\n');
             cin.getline(title, SDDS_TITLE_SEARCH);
 
             PublicationSelector ps("Select one of the following found matches:", SDDS_DEFAULT_PAGE_SIZE);
